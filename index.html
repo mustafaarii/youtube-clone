@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    </link>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>YouTube</title>
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="navbar">
+            <div class="start">
+                <div class="hamburger-btn" onclick="toggleHamburgerButton(this)">
+                    <a href="#" type="button"><i class="fa fa-bars"></i></a>
+                </div>
+
+                <div id="logo-icon" class="logo-icon style-scope ytd-logo">
+                    <!--css-build:shady-->
+                    <img src="https://download.logo.wine/logo/YouTube/YouTube-White-Full-Color-Logo.wine.png" alt="">
+                </div>
+            </div>
+
+
+            <div class="center">
+                <div class="search-bar">
+                    <input class="input" placeholder="Ara" />
+                    <button class="search_button menu_button"><i class="fa fa-search"></i></button>
+                    <button class="search_button icon_button microphone"><i class="fa fa-microphone"></i></button>
+                </div>
+            </div>
+
+            <div class="end">
+                <div class="menu" >
+                    <button class="button icon_button" onclick="toggleNavbarButton()"><i class="fa fa-ellipsis-v"></i></button>
+
+                    <div class="nav_menu" id="nav_menu">
+                        <a class="menu bordered">
+                            <i class="fa fa-shield"></i>
+                            <span>Youtube'daki verileriniz</span>
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-regular fa-moon"></i>
+                            Görünüm: Cihaz teması
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-language"></i>
+                            Dil: Türkçe
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-user-shield"></i>
+                            Kısıtlı Mod: Kapalı
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-globe"></i>
+                            Konum: Türkiye
+                        </a>
+                        <a class="menu bordered">
+                            <i class="fa-solid fa-keyboard"></i>
+                            Klavye kısayolları
+                        </a>
+                        <a class="menu bordered">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                        <a class="menu">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>Yardım</span>
+                        </a>
+                        <a class="menu">
+                            <i class="fa-solid fa-comment-medical"></i>
+                            <span>Geri bildirim gönder</span>
+                        </a>
+                    </div>
+                </div>
+                
+
+                <button class="menu_button login_button">
+                    <i class="fa-regular fa-circle-user"></i>
+                    Oturum Aç
+                </button>
+            </div>
+
+        </div>
+
+        <div class="body-container">
+            <div class="sidebar">
+                <div class="section">
+                    <button class="button active"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+                    <button class="button"><i class="fa-solid fa-z"></i> Shorts</button>
+                    <button class="button"><i class="fa-solid fa-bookmark"></i> Abonelikler</button>
+
+                </div>
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-video"></i> Kitaplık</button>
+                    <button class="button"><i class="fa-sharp fa-solid fa-arrow-rotate-right"></i> Geçmiş</button>
+                </div>
+                <div class="section">
+                    <p>Videoları beğenmek, yorum <br/> yapmak ve abone olmak için<br/> oturum açın.</p>
+                    <button class="menu_button login_button">
+                        <i class="fa-regular fa-circle-user"></i>
+                        Oturum Aç
+                    </button>
+                </div>
+
+                <div class="section">
+                    <h1>Keşfet</h1>
+                    <button class="button"><i class="fa-solid fa-fire"></i> Trendler</button>
+                    <button class="button"><i class="fa-solid fa-music"></i> Müzik</button>
+                    <button class="button"><i class="fa-solid fa-signal"></i> Canlı</button>
+                    <button class="button"><i class="fa-solid fa-gamepad"></i> Oyun</button>
+                    <button class="button"><i class="fa-solid fa-trophy"></i> Spor</button>
+                </div>
+
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-plus"></i> Kanallara göz at</button>
+                </div>
+
+                <div class="section youtube">
+                    <h1>YouTube'dan daha fazla içerik</h1>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Premium</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Music</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Kids</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube TV</button>
+                </div>
+
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-gear"></i> Ayarlar</button>
+                    <button class="button"><i class="fa-solid fa-bookmark"></i> İçerik bildirme geçmişi</button>
+                    <button class="button"><i class="fa-solid fa-question"></i> Yardım</button>
+                    <button class="button">Geri bildirim gönder</button>
+                </div>
+            </div>
+
+
+            <div class="categories-buttons">
+                <button class="button">Tümü</button>
+                <button class="button">Oyun</button>
+                <button class="button">Müzik</button>
+                <button class="button">Canlı</button>
+                <button class="button">Sitcom'lar</button>
+                <button class="button">Animasyon</button>
+                <button class="button">Turistik yerler</button>
+                <button class="button">Futbol</button>
+                <button class="button">Yemek pişirme</button>
+                <button class="button">Son yüklenenler</button>
+            </div>
+
+
+            <div class="site-content">
+                <div class="content">
+                    <div class="tab">
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-1.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>ULTRA INCE KABLOSUZ KLAVYE (Everest KB-BT82)</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>59 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-2.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>PUBG'yi Ücretsiz İndirmek (Everest KB-BT82)</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>521 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-3.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>En Sevilen Yıldız Tilbe Şarkıları</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>4,8 Mn görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-4.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>SÜREKLİ DİZİ | 150 Parçalık Set | TAM BÖLÜM</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>308 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-5.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>14 Dakikada | GTA : San  Andreas Görevleri Hikayesi</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>682 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-6.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>100. Yıl Ticaret Lisesi (75.Bölüm) - Çok Güzel Hareketler 2</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>396 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-7.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>The New Mercedes C Class 2023 Test Drive</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>12 Mn görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-8.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>Need For Speed Most Wanted - Final 4K 60FPS Oyun Performansı</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>36 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="tab">
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-1.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>ULTRA INCE KABLOSUZ KLAVYE (Everest KB-BT82)</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>59 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-2.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>PUBG'yi Ücretsiz İndirmek (Everest KB-BT82)</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>521 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-3.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>En Sevilen Yıldız Tilbe Şarkıları</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>4,8 Mn görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-4.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>SÜREKLİ DİZİ | 150 Parçalık Set | TAM BÖLÜM</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>308 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-5.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>14 Dakikada | GTA : San  Andreas Görevleri Hikayesi</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>682 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-6.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>100. Yıl Ticaret Lisesi (75.Bölüm) - Çok Güzel Hareketler 2</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>396 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-7.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>The New Mercedes C Class 2023 Test Drive</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>12 Mn görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-tab">
+                            <div class="content-tab__img">
+                                <img src="./src/images/homepage-covers/cover-8.webp">
+                                <p>8:34</p>
+                            </div>
+                            <div class="content-tab__body">
+                                <img src="./src/images/homepage-covers/avatar.png">
+                                <div class="description">
+                                    <h4>Need For Speed Most Wanted - Final 4K 60FPS Oyun Performansı</h4>
+                                    <p>Mustafa ARI</p>
+                                    <p>36 B görüntüleme - 1 yıl önce</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="./src/js/main.js"></script>
+</body>
+
+</html>

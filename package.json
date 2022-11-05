@@ -1,0 +1,12 @@
+{
+  "name": "youtube-with-sass",
+  "version": "1.0.0",
+  "description": "Youtube clone with sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./src/sass/style.scss ./src/css/style.css"
+  },
+  "author": "Mustafa ARI",
+  "license": "ISC"
+}
