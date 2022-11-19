@@ -61,12 +61,21 @@ body {
   color: #bbb;
 }
 
+.body-wrapper {
+  min-width: inherit;
+  min-height: inherit;
+}
+
 .navbar {
   width: 100%;
   display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #0f0f0f;
   grid-template-columns: 2fr 6fr 2fr;
   justify-items: auto;
-  height: 5vh;
+  height: 6.7vh;
 }
 .navbar .start {
   display: flex;
@@ -178,9 +187,8 @@ body {
 
 .body-container {
   display: grid;
-  height: 95vh;
   grid-template-columns: auto 10fr;
-  grid-template-rows: 1fr 1fr 10fr;
+  grid-template-rows: 100px 1fr 10fr;
 }
 .body-container .closed {
   width: 75px;
@@ -210,9 +218,11 @@ body {
 .body-container .sidebar {
   grid-row: 1/-1;
   position: sticky;
+  top: 6.7vh;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  height: 93.3vh;
 }
 .body-container .sidebar::-webkit-scrollbar {
   background-color: #0f0f0f;
@@ -263,6 +273,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 1.2rem 0 1.2rem 0;
+  height: 5vh;
 }
 .body-container .categories-buttons :first-child {
   background-color: #bbb;

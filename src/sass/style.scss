@@ -11,12 +11,21 @@ body{
     color: $buttonTextColor;
 }
 
+.body-wrapper{
+    min-width: inherit;
+    min-height: inherit;
+}
+
 .navbar{
     width: 100%;
     display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: $DBackground;
     grid-template-columns: 2fr 6fr 2fr;
     justify-items: auto;
-    height: 5vh;
+    height: $navHeight;
     .start{
         display: flex;
         justify-content: flex-start;
@@ -151,9 +160,8 @@ body{
 
 .body-container{
     display: grid;
-    height: 95vh;
     grid-template-columns: auto 10fr;
-    grid-template-rows: 1fr 1fr 10fr;
+    grid-template-rows: 100px 1fr 10fr;
     
     .closed {
         width: 75px;
@@ -189,9 +197,12 @@ body{
     .sidebar { 
         grid-row: 1/-1;
         position: sticky;
+        top: $navHeight;
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        height: (100vh - $navHeight);
+
 
         &::-webkit-scrollbar{
             background-color: $DBackground;
@@ -257,6 +268,7 @@ body{
         justify-content: center;
         align-items: center;
         margin: 1.2rem 0 1.2rem 0;
+        height: 5vh;
         
 
         :first-child{
