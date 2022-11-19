@@ -53,7 +53,6 @@ table {
 }
 
 body {
-  height: 100vh;
   background-color: #0f0f0f;
   font-size: 16x;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -61,9 +60,8 @@ body {
   color: #bbb;
 }
 
-.body-wrapper {
-  min-width: inherit;
-  min-height: inherit;
+button:hover {
+  cursor: pointer;
 }
 
 .navbar {
@@ -71,10 +69,9 @@ body {
   display: grid;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   background-color: #0f0f0f;
   grid-template-columns: 2fr 6fr 2fr;
-  justify-items: auto;
   height: 6.7vh;
 }
 .navbar .start {
@@ -139,7 +136,6 @@ body {
   background-color: #282828;
   font-size: 0.9rem;
   display: none;
-  z-index: 10;
 }
 .navbar .end .menu .nav_menu * {
   font-size: 14px;
@@ -188,7 +184,7 @@ body {
 .body-container {
   display: grid;
   grid-template-columns: auto 10fr;
-  grid-template-rows: 100px 1fr 10fr;
+  grid-template-rows: 100px 1fr auto;
 }
 .body-container .closed {
   width: 75px;
@@ -304,12 +300,13 @@ body {
   border-bottom: 3px solid grey;
 }
 .body-container .site-content .content .tab {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
   justify-content: space-around;
   margin-bottom: 2rem;
 }
 .body-container .site-content .content .tab .content-tab {
-  width: 23%;
   display: flex;
   flex-direction: column;
   font-size: 0.89rem;
@@ -415,8 +412,24 @@ body {
   background-color: rgba(1, 152, 253, 0.4);
 }
 
-button:hover {
-  cursor: pointer;
+@media screen and (max-width: 1000px) {
+  /* Common tags */
+  .sm-none {
+    display: none !important;
+  }
+  /* Others */
+  .body-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .body-container .sidebar {
+    display: none;
+  }
+  .body-container .categories-buttons {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

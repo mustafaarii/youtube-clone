@@ -3,7 +3,6 @@
 @import 'mixin.scss';
 
 body{
-    height: 100vh;
     background-color: $DBackground;
     font-size: 16x;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -11,20 +10,21 @@ body{
     color: $buttonTextColor;
 }
 
-.body-wrapper{
-    min-width: inherit;
-    min-height: inherit;
+button{
+    &:hover{
+        cursor: pointer;
+    }
 }
+
 
 .navbar{
     width: 100%;
     display: grid;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
     background-color: $DBackground;
     grid-template-columns: 2fr 6fr 2fr;
-    justify-items: auto;
     height: $navHeight;
     .start{
         display: flex;
@@ -97,7 +97,6 @@ body{
                 background-color: $DMenuBackground;
                 font-size: 0.9rem;
                 display: none;
-                z-index: 10;
 
                 *{
                     font-size: 14px;
@@ -161,7 +160,7 @@ body{
 .body-container{
     display: grid;
     grid-template-columns: auto 10fr;
-    grid-template-rows: 100px 1fr 10fr;
+    grid-template-rows: 100px 1fr auto;
     
     .closed {
         width: 75px;
@@ -303,12 +302,13 @@ body{
             border-bottom: 3px solid grey;
             
             .tab{
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap : 5px;
                 justify-content: space-around;
                 margin-bottom: 2rem;
 
                 .content-tab{
-                    width: 23%;
                     display: flex;
                     flex-direction: column;
                     font-size: 0.89rem;
@@ -435,8 +435,31 @@ body{
     }
 }
 
-button{
-    &:hover{
-        cursor: pointer;
+@media screen and (max-width:1000px) {
+    /* Common tags */
+  
+  .sm-none {
+    display: none !important;
+  }
+
+  /* Others */
+
+  .body-container {
+
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    .sidebar {
+        display: none;
     }
+
+    .categories-buttons {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: auto;
+    }
+    
+  }
+  
+
 }
