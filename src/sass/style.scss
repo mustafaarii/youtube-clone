@@ -267,8 +267,11 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 1.2rem 0 1.2rem 0;
         height: 5vh;
+        position: sticky;
+        top: $navHeight;
+        background-color: $DBackground;
+        z-index: 10;
         
 
         :first-child{

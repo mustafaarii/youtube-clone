@@ -272,8 +272,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1.2rem 0 1.2rem 0;
   height: 5vh;
+  position: sticky;
+  top: 6.7vh;
+  background-color: #0f0f0f;
+  z-index: 10;
 }
 .body-container .categories-buttons :first-child {
   background-color: #bbb;
