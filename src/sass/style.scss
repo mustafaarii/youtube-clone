@@ -26,6 +26,8 @@ button{
     background-color: $DBackground;
     grid-template-columns: 2fr 6fr 2fr;
     height: $navHeight;
+    transition: 0.3s;
+
     .start{
         display: flex;
         justify-content: flex-start;
@@ -266,11 +268,13 @@ button{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 5vh;
+        height: $navHeight;
+        padding: 0.5rem;
         position: sticky;
         top: $navHeight;
         background-color: $DBackground;
         z-index: 10;
+        transition: 0.3s;
         
 
         :first-child{
@@ -282,6 +286,7 @@ button{
             margin: 12px 6px 12px 6px;
             padding: 10px;
             font-weight: bold;
+            white-space: nowrap;
             transition: 300ms ease background;
 
             &:hover{
@@ -444,6 +449,15 @@ button{
 
   /* Others */
 
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+
+      .end{
+          margin-right: 0px!important;
+      }
+  }
+
   .body-container {
 
     grid-template-columns: 1fr;
@@ -451,12 +465,23 @@ button{
 
     .sidebar {
         display: none;
+        height: 100vh;
+        position: sticky;
+        background-color: $DBackground;
     }
 
     .categories-buttons {
         overflow-x: scroll;
         overflow-y: hidden;
         height: auto;
+
+        ::-webkit-scrollbar-thumb {
+            display: none;
+        }
+    }
+
+    .site-content {
+        z-index: -1;
     }
     
   }

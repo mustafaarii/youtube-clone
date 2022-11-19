@@ -73,6 +73,7 @@ button:hover {
   background-color: #0f0f0f;
   grid-template-columns: 2fr 6fr 2fr;
   height: 6.7vh;
+  transition: 0.3s;
 }
 .navbar .start {
   display: flex;
@@ -268,11 +269,13 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5vh;
+  height: 6.7vh;
+  padding: 0.5rem;
   position: sticky;
   top: 6.7vh;
   background-color: #0f0f0f;
   z-index: 10;
+  transition: 0.3s;
 }
 .body-container .categories-buttons :first-child {
   background-color: #bbb;
@@ -282,6 +285,7 @@ button:hover {
   margin: 12px 6px 12px 6px;
   padding: 10px;
   font-weight: bold;
+  white-space: nowrap;
   transition: 300ms ease background;
 }
 .body-container .categories-buttons .button:hover {
@@ -418,17 +422,33 @@ button:hover {
     display: none !important;
   }
   /* Others */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar .end {
+    margin-right: 0px !important;
+  }
   .body-container {
     grid-template-columns: 1fr;
     gap: 10px;
   }
   .body-container .sidebar {
     display: none;
+    height: 100vh;
+    position: sticky;
+    background-color: #0f0f0f;
   }
   .body-container .categories-buttons {
     overflow-x: scroll;
     overflow-y: hidden;
     height: auto;
+  }
+  .body-container .categories-buttons ::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  .body-container .site-content {
+    z-index: -1;
   }
 }
 
