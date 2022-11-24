@@ -308,8 +308,8 @@ button{
             
             .tab{
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap : 5px;
+                grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+                gap : 1rem;
                 justify-content: space-around;
                 margin-bottom: 2rem;
 
