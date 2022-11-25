@@ -26,8 +26,10 @@ function toggleHamburgerButton(page) {
     if(page == "watch"){
         className = "opened";
         blackWindow.classList.contains(className) ? blackWindow.classList.remove(className) : blackWindow.classList.add(className)
+        document.body.style.overflowY = "hidden"
     }
         sidebar.classList.contains(className) ? sidebar.classList.remove(className) : sidebar.classList.add(className)
+        document.body.style.overflowY = "auto"
 }
 
 function closeElement(element) {

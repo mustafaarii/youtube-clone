@@ -66,7 +66,7 @@ button:hover {
 
 .black-window {
   position: absolute;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   background-color: black;
   opacity: 0.5;
@@ -90,7 +90,7 @@ a {
   z-index: 10;
   background-color: #0f0f0f;
   grid-template-columns: 2fr 6fr 2fr;
-  height: 6.7vh;
+  height: 8vh;
   transition: 0.3s;
 }
 .navbar .start {
@@ -217,11 +217,11 @@ a {
 .body-container .sidebar {
   grid-row: 1/-1;
   position: sticky;
-  top: 6.7vh;
+  top: 8vh;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 93.3vh;
+  height: 92vh;
 }
 .body-container .sidebar::-webkit-scrollbar {
   background-color: #0f0f0f;
@@ -271,10 +271,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6.7vh;
+  height: 8vh;
   padding: 0.5rem;
   position: sticky;
-  top: 6.7vh;
+  top: 8vh;
   background-color: #0f0f0f;
   z-index: 10;
   transition: 0.3s;
