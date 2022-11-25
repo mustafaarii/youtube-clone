@@ -25,11 +25,10 @@ function toggleHamburgerButton(page) {
     let className = "closed";
     if(page == "watch"){
         className = "opened";
-        blackWindow.classList.contains(className) ? blackWindow.classList.remove(className) : blackWindow.classList.add(className)
-        document.body.style.overflowY = "hidden"
+        blackWindow.classList.contains(className) ? blackWindow.classList.remove(className) : blackWindow.classList.add(className);
+        document.body.style.overflow = "hidden"
     }
-        sidebar.classList.contains(className) ? sidebar.classList.remove(className) : sidebar.classList.add(className)
-        document.body.style.overflowY = "auto"
+        sidebar.classList.contains(className) ? sidebar.classList.remove(className) : sidebar.classList.add(className);
 }
 
 function closeElement(element) {
@@ -41,6 +40,7 @@ window.onload = function onloadFunc(e) {
     blackWindow.addEventListener("click", ()=>{
         blackWindow.classList.remove("opened");
         sidebar.classList.remove("opened");
+        document.body.style.overflow = "auto"
     })
 };
 
