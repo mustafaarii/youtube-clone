@@ -5,6 +5,7 @@ const sidebar = document.getElementsByClassName("sidebar")[0];
 const bodyContainer = document.getElementsByClassName("body-container")[0];
 const categoriesButtons = document.querySelector(".body-container .categories-buttons");
 const loginButton = document.querySelector(".login_button");
+const blackWindow = document.querySelector(".black-window");
 
 //variables
 let oldScrollY = window.scrollY;
@@ -20,20 +21,25 @@ function toggleNavbarButton() {
 
 }
 
-function toggleHamburgerButton() {
-    if (sidebar.classList.contains("closed"))
-        sidebar.classList.remove("closed")
-    else
-        sidebar.classList.add("closed")
-
+function toggleHamburgerButton(page) {
+    let className = "closed";
+    if(page == "watch"){
+        className = "opened";
+        blackWindow.classList.contains(className) ? blackWindow.classList.remove(className) : blackWindow.classList.add(className)
+    }
+        sidebar.classList.contains(className) ? sidebar.classList.remove(className) : sidebar.classList.add(className)
 }
 
-function closeNavbarButton() {
-    navmenu.style.display = 'none';
+function closeElement(element) {
+    element.style.display = 'none';
 }
 
 window.onload = function onloadFunc(e) {
-    bodyContainer.addEventListener("click", closeNavbarButton)
+    bodyContainer.addEventListener("click", ()=>closeElement(navmenu))
+    blackWindow.addEventListener("click", ()=>{
+        blackWindow.classList.remove("opened");
+        sidebar.classList.remove("opened");
+    })
 };
 
 // mobile actions

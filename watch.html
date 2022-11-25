@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    </link>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <title>YouTube</title>
+</head>
+
+<body>
+    <div class="black-window"></div>
+    <div class="body-wrapper">
+        <div class="navbar">
+            <div class="start">
+                <div class="hamburger-btn  sm-none" onclick="toggleHamburgerButton('watch')">
+                    <a href="#" type="button"><i class="fa fa-bars"></i></a>
+                </div>
+
+                <div id="logo-icon" class="logo-icon style-scope ytd-logo">
+                    <!--css-build:shady-->
+                    <img src="https://download.logo.wine/logo/YouTube/YouTube-White-Full-Color-Logo.wine.png" alt="">
+                </div>
+            </div>
+
+
+            <div class="center sm-none">
+                <div class="search-bar">
+                    <input class="input" placeholder="Ara" />
+                    <button class="search_button menu_button"><i class="fa fa-search"></i></button>
+                    <button class="search_button icon_button microphone"><i class="fa fa-microphone"></i></button>
+                </div>
+            </div>
+
+            <div class="end ">
+                <div class="menu sm-none">
+                    <button class="button icon_button" onclick="toggleNavbarButton()"><i
+                            class="fa fa-ellipsis-v"></i></button>
+
+                    <div class="nav_menu" id="nav_menu">
+                        <a class="menu bordered">
+                            <i class="fa fa-shield"></i>
+                            <span>Youtube'daki verileriniz</span>
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-regular fa-moon"></i>
+                            Görünüm: Cihaz teması
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-language"></i>
+                            Dil: Türkçe
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-user-shield"></i>
+                            Kısıtlı Mod: Kapalı
+                        </a>
+                        <a class="detail_menu">
+                            <i class="fa-solid fa-globe"></i>
+                            Konum: Türkiye
+                        </a>
+                        <a class="menu bordered">
+                            <i class="fa-solid fa-keyboard"></i>
+                            Klavye kısayolları
+                        </a>
+                        <a class="menu bordered">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Ayarlar</span>
+                        </a>
+                        <a class="menu">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span>Yardım</span>
+                        </a>
+                        <a class="menu">
+                            <i class="fa-solid fa-comment-medical"></i>
+                            <span>Geri bildirim gönder</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <button class="menu_button login_button">
+                    <i class="fa-regular fa-circle-user"></i>
+                    <span class="sm-none">Oturum Aç</span>
+                </button>
+            </div>
+        </div>
+        <div class="body-container watch-container">
+            <div class="sidebar">
+                <div class="start">
+                    <div class="hamburger-btn  sm-none" onclick="toggleHamburgerButton(this)">
+                        <a href="#" type="button"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <div id="logo-icon" class="logo-icon style-scope ytd-logo">
+                        <!--css-build:shady-->
+                        <img src="https://download.logo.wine/logo/YouTube/YouTube-White-Full-Color-Logo.wine.png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="section">
+                    <button class="button active"><i class="fa-solid fa-house"></i> Ana Sayfa</button>
+                    <button class="button"><i class="fa-solid fa-z"></i> Shorts</button>
+                    <button class="button"><i class="fa-solid fa-bookmark"></i> Abonelikler</button>
+
+                </div>
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-video"></i> Kitaplık</button>
+                    <button class="button"><i class="fa-sharp fa-solid fa-arrow-rotate-right"></i> Geçmiş</button>
+                </div>
+                <div class="section">
+                    <p>Videoları beğenmek, yorum <br /> yapmak ve abone olmak için<br /> oturum açın.</p>
+                    <button class="menu_button login_button">
+                        <i class="fa-regular fa-circle-user"></i>
+                        Oturum Aç
+                    </button>
+                </div>
+
+                <div class="section">
+                    <h1>Keşfet</h1>
+                    <button class="button"><i class="fa-solid fa-fire"></i> Trendler</button>
+                    <button class="button"><i class="fa-solid fa-music"></i> Müzik</button>
+                    <button class="button"><i class="fa-solid fa-signal"></i> Canlı</button>
+                    <button class="button"><i class="fa-solid fa-gamepad"></i> Oyun</button>
+                    <button class="button"><i class="fa-solid fa-trophy"></i> Spor</button>
+                </div>
+
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-plus"></i> Kanallara göz at</button>
+                </div>
+
+                <div class="section youtube">
+                    <h1>YouTube'dan daha fazla içerik</h1>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Premium</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Music</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube Kids</button>
+                    <button class="button"><i class="fa-brands fa-youtube"></i> YouTube TV</button>
+                </div>
+
+                <div class="section">
+                    <button class="button"><i class="fa-solid fa-gear"></i> Ayarlar</button>
+                    <button class="button"><i class="fa-solid fa-bookmark"></i> İçerik bildirme geçmişi</button>
+                    <button class="button"><i class="fa-solid fa-question"></i> Yardım</button>
+                    <button class="button">Geri bildirim gönder</button>
+                </div>
+            </div>
+
+            <div class="watch-container__content">
+                <div class="left">
+                    left
+                </div>
+                <div class="right">
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/1.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Motive - Ölümsüz</p>
+                            <p class="desc__author">Motive</p>
+                            <p class="desc__view">46 B görüntüleme - 3 ay önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/2.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Motive & Jefe - CHORBA (The Movie)</p>
+                            <p class="desc__author">Motive</p>
+                            <p class="desc__view">1,8 Mn görüntüleme - 1 ay önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/3.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Aspova - Tutsak Mıyım (Official Audio) #çığlıksenfonisi</p>
+                            <p class="desc__author">Aspova</p>
+                            <p class="desc__view">6,8 B görüntüleme - 1 gün önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/4.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Aspova - Karıştırdın ft. Şanışer (Official Audio) #çığlıksenfonisi</p>
+                            <p class="desc__author">Aspova</p>
+                            <p class="desc__view">25 B görüntüleme - 1 gün önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/5.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Kezzo ft. Defkhan - Olduramadım (Official Video)</p>
+                            <p class="desc__author">Kezzo</p>
+                            <p class="desc__view">1,3 Mn görüntüleme - 1 yıl önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/6.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Kezzo - Gözü Doysun (Feat. 9Canlı) [Official Video] #GözüDoysun</p>
+                            <p class="desc__author">Kezzo</p>
+                            <p class="desc__view">3,4 Mn görüntüleme - 6 yıl önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/7.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Defkhan ft. Sagopa Kajmer - Onlarla Konuşuyorum (Official Video)</p>
+                            <p class="desc__author">Defkhan Official</p>
+                            <p class="desc__view">1,8 Mn görüntüleme - 2 hafta önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/8.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Hayki - Bu Kendime Son Gelişim</p>
+                            <p class="desc__author">Hayki</p>
+                            <p class="desc__view">142 B görüntüleme - 2 ay önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/9.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Kezzo - Yaşlanıyorum (Official Audio)</p>
+                            <p class="desc__author">Hayki</p>
+                            <p class="desc__view">1 Mn görüntüleme - 6 yıl önce</p>
+                        </div>
+                    </div>
+                    <div class="right__box">
+                        <div class="image">
+                            <img src="./src/images/watch-suggested/10.webp">
+                        </div>
+                        <div class="desc">
+                            <p  class="desc__title">Aspova - İSTEMEM ft. Hidra (Official Audio)</p>
+                            <p class="desc__author">Aspova</p>
+                            <p class="desc__view">913 B görüntüleme - 1 ay önce</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>

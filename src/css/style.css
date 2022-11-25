@@ -64,12 +64,30 @@ button:hover {
   cursor: pointer;
 }
 
+.black-window {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 20;
+  display: none;
+}
+.black-window.opened {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #bbb;
+}
+
 .navbar {
   width: 100%;
   display: grid;
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 10;
   background-color: #0f0f0f;
   grid-template-columns: 2fr 6fr 2fr;
   height: 6.7vh;
@@ -78,22 +96,6 @@ button:hover {
 .navbar .start {
   display: flex;
   justify-content: flex-start;
-}
-.navbar .start .hamburger-btn {
-  padding: 0.3rem;
-  position: relative;
-  top: -5px;
-}
-.navbar .start .hamburger-btn a {
-  color: white;
-  display: block;
-  padding: 1rem;
-}
-.navbar .start .logo-icon img {
-  width: 100px;
-  object-fit: contain;
-  position: relative;
-  top: 0;
 }
 .navbar .center {
   display: flex;
@@ -361,6 +363,62 @@ button:hover {
   border-bottom: none;
 }
 
+.watch-container {
+  display: block;
+}
+.watch-container .sidebar {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  z-index: 100;
+  height: 100vh;
+  background-color: #0f0f0f;
+  transition: 0.4s left;
+}
+.watch-container .sidebar .start {
+  display: flex;
+}
+.watch-container .sidebar.opened {
+  left: 0;
+}
+.watch-container .watch-container__content {
+  display: flex;
+  gap: 3rem;
+  margin: 1rem 2rem 1rem 2rem;
+}
+.watch-container .watch-container__content .left {
+  width: 73%;
+}
+.watch-container .watch-container__content .right {
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.watch-container .watch-container__content .right .right__box {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+.watch-container .watch-container__content .right .right__box .image img {
+  border-radius: 10px;
+  height: 100%;
+  max-width: 10rem;
+  object-fit: cover;
+}
+.watch-container .watch-container__content .right .right__box .desc {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+  gap: 0.4rem;
+}
+.watch-container .watch-container__content .right .right__box .desc :first-child {
+  font-weight: bold;
+}
+.watch-container .watch-container__content .right .right__box .desc :not(:first-child) {
+  font-size: 0.8rem;
+}
+
 .button {
   background-color: hsl(0deg, 0%, 18.82%);
   color: #bbb;
@@ -414,6 +472,24 @@ button:hover {
 }
 .login_button:hover {
   background-color: rgba(1, 152, 253, 0.4);
+}
+
+.hamburger-btn {
+  padding: 0.3rem;
+  position: relative;
+  top: -5px;
+}
+.hamburger-btn a {
+  color: white;
+  display: block;
+  padding: 1rem;
+}
+
+.logo-icon img {
+  width: 100px;
+  object-fit: contain;
+  position: relative;
+  top: 0;
 }
 
 @media screen and (max-width: 1000px) {
