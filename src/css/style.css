@@ -54,7 +54,7 @@ table {
 
 body {
   background-color: #0f0f0f;
-  font-size: 16x;
+  font-size: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   color: #bbb;
@@ -384,10 +384,121 @@ a {
 .watch-container .watch-container__content {
   display: flex;
   gap: 3rem;
-  margin: 1rem 2rem 1rem 2rem;
+  margin: 1rem 6rem 1rem 6rem;
 }
 .watch-container .watch-container__content .left {
   width: 73%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.watch-container .watch-container__content .left .left__tags {
+  color: #3ea6ff;
+  font-size: 0.8rem;
+}
+.watch-container .watch-container__content .left .left__tags p {
+  display: inline;
+}
+.watch-container .watch-container__content .left .left__tags p::before {
+  content: "#";
+}
+.watch-container .watch-container__content .left .left__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.watch-container .watch-container__content .left .left__actions {
+  display: flex;
+}
+.watch-container .watch-container__content .left .left__actions .channel {
+  display: flex;
+  width: 50%;
+  gap: 1rem;
+}
+.watch-container .watch-container__content .left .left__actions .channel .channel__img img {
+  border-radius: 50%;
+}
+.watch-container .watch-container__content .left .left__actions .channel .channel__info {
+  align-self: center;
+}
+.watch-container .watch-container__content .left .left__actions .channel .channel__info :nth-child(2) {
+  font-size: 0.7rem;
+}
+.watch-container .watch-container__content .left .left__actions .channel .channel__subscribe {
+  border-radius: 18px;
+  border: none;
+  width: 6rem;
+  min-height: 2.5rem;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.watch-container .watch-container__content .left .left__actions .channel .channel__subscribe:hover {
+  background-color: rgb(255, 255, 255);
+}
+.watch-container .watch-container__content .left .left__actions .actions {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  gap: 0.7rem;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  width: 7rem;
+  max-height: 2.5rem;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button {
+  position: relative;
+  margin: 1rem 0px 1rem 0px;
+  display: inline-block;
+  border-radius: inherit;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button:hover .button__popover {
+  opacity: 1;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button .button__popover {
+  position: absolute;
+  height: 1rem;
+  min-width: 2rem;
+  opacity: 0;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  bottom: -3rem;
+  background-color: inherit;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s opacity;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button--full {
+  width: 100%;
+}
+.watch-container .watch-container__content .left .left__actions .actions .actions__button-group .button--full p {
+  padding: 0.6rem;
+}
+.watch-container .watch-container__content .left .left__description {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+.watch-container .watch-container__content .left .left__description:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.watch-container .watch-container__content .left .left__description .hidden {
+  display: none;
+}
+.watch-container .watch-container__content .left .left__description .visible {
+  display: block;
 }
 .watch-container .watch-container__content .right {
   width: 27%;

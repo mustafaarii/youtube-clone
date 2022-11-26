@@ -4,7 +4,7 @@
 
 body{
     background-color: $DBackground;
-    font-size: 16x;
+    font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
     color: $buttonTextColor;
@@ -35,7 +35,7 @@ a {
     color: $buttonTextColor;
 }
 
-
+//common section
 .navbar{
     width: 100%;
     display: grid;
@@ -73,7 +73,7 @@ a {
                 color: $buttonTextColor;
             }
             .input:focus{
-                outline: 0.1px #3ea6ff solid;
+                outline: 0.1px $lightBlue solid;
             }
 
         }
@@ -400,11 +400,147 @@ a {
     .watch-container__content {
         display: flex;
         gap: 3rem;
-        margin: 1rem 2rem 1rem 2rem;
+        margin: 1rem 6rem 1rem 6rem;
 
         .left {
             width: 73%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .left__tags {
+                color: $lightBlue;
+                font-size: 0.8rem;
+
+                p {
+                    display: inline;
+                    &::before {
+                        content: "#";
+                    }
+                }
+            }
+
+            .left__title {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .left__actions {
+                display: flex;
+
+                .channel {
+                    display: flex;
+                    width: 50%;
+                    gap: 1rem;
+
+                    .channel__img{
+                        img {
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .channel__info {
+                        align-self: center;
+                        :nth-child(2) {
+                            font-size: 0.7rem;
+                        }
+                    }
+                    
+                    .channel__subscribe {
+                        border-radius: 18px;
+                        border: none;
+                        width: 6rem;
+                        min-height: 2.5rem;
+                        align-self: center;
+
+                        background-color: rgb(255,255,255,0.8);
+
+                        &:hover {
+                            background-color: rgb(255,255,255);
+                        }
+                    }
+                    
+                }
+
+                .actions {
+                    display: flex;
+                    width: 50%;
+                    justify-content: flex-end;
+                    gap: 0.7rem;
+
+                    .actions__button-group {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba(255, 255, 255, 0.1);
+                        border-radius: 1.5rem;
+                        width: 7rem;
+                        max-height: 2.5rem;
+                        
+                        .button {
+                            position: relative;
+                            margin: 1rem 0px 1rem 0px;
+                            display: inline-block;
+                            border-radius: inherit;
+                            height: 100%;
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.2);
+                            }
+
+                            &:hover .button__popover {
+                                opacity: 1;
+                            }
+
+                            .button__popover {
+                                position: absolute;
+                                height: 1rem;
+                                min-width: 2rem;
+                                opacity: 0;
+                                font-size: 0.6rem;
+                                white-space: nowrap;
+                                bottom: -3rem;
+                                background-color: inherit;
+                                padding: 10px;
+                                border-radius: 10px;
+                                transition: 0.3s opacity;
+                            }
+                        }
+
+                        .button--full {
+                            width: 100%;
+
+                            p {
+                                padding: 0.6rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .left__description {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 1rem;
+                border-radius: 0.6rem;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+
+                .hidden {
+                    display: none;
+                }
+                .visible {
+                    display: block
+                }
+            }
         }
+
+
         .right {
             width: 27%;
             display: flex;
@@ -488,13 +624,13 @@ a {
 
 .login_button{
     border-radius:2rem;
-    color: #3ea6ff;
+    color: $lightBlue;
     background-color: $DBackground;
     font-weight: bold;
     border: 1px solid rgb(88, 87, 87);
 
     *{
-        color: #3ea6ff;
+        color: $lightBlue;
     }
 
     i{
