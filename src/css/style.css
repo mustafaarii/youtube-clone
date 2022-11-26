@@ -491,6 +491,9 @@ a {
   padding: 1rem;
   border-radius: 0.6rem;
 }
+.watch-container .watch-container__content .left .left__description * {
+  padding: 0.3rem;
+}
 .watch-container .watch-container__content .left .left__description:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -499,6 +502,9 @@ a {
 }
 .watch-container .watch-container__content .left .left__description .visible {
   display: block;
+}
+.watch-container .watch-container__content .left .left__description .read-more {
+  cursor: pointer;
 }
 .watch-container .watch-container__content .right {
   width: 27%;

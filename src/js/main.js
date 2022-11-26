@@ -35,6 +35,7 @@ function closeElement(element) {
     element.style.display = 'none';
 }
 
+
 window.onload = function onloadFunc(e) {
     bodyContainer.addEventListener("click", ()=>closeElement(navmenu))
     blackWindow.addEventListener("click", ()=>{
