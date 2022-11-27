@@ -46,6 +46,7 @@ a {
     grid-template-columns: 2fr 6fr 2fr;
     height: $navHeight;
     transition: 0.3s;
+    padding-bottom: 0.5rem;
 
     .start{
         display: flex;
@@ -317,7 +318,7 @@ a {
                     flex-direction: column;
                     font-size: 0.89rem;
         
-                    .content-tab__img{
+                    &__img{
                         position: relative;
                         font-size: 0.7rem;
                         img{
@@ -330,7 +331,7 @@ a {
                             position: absolute;
                             bottom: 0;
                             right: 0.4rem;
-                            color: white;
+                            color: buttonTextColor;
                             background-color: $DMenuBackground;
                             border-radius: 5px;
                             padding: 0.3rem;
@@ -339,7 +340,7 @@ a {
                         }
                     }
         
-                    .content-tab__body{
+                    &__body{
                         width: 100%;
                         display: flex;
                         margin-top: 10px;
@@ -400,7 +401,7 @@ a {
     .watch-container__content {
         display: flex;
         gap: 3rem;
-        margin: 1rem 6rem 1rem 6rem;
+        margin: 1rem 3rem 1rem 3rem;
 
         .left {
             width: 73%;
@@ -408,7 +409,7 @@ a {
             flex-direction: column;
             gap: 0.6rem;
 
-            .left__tags {
+            &__tags {
                 color: $lightBlue;
                 font-size: 0.8rem;
 
@@ -420,12 +421,12 @@ a {
                 }
             }
 
-            .left__title {
+            &__title{
                 font-size: 1.2rem;
                 font-weight: bold;
             }
 
-            .left__actions {
+            &__actions{
                 display: flex;
 
                 .channel {
@@ -467,63 +468,10 @@ a {
                     width: 50%;
                     justify-content: flex-end;
                     gap: 0.7rem;
-
-                    .actions__button-group {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: rgba(255, 255, 255, 0.1);
-                        border-radius: 1.5rem;
-                        width: 7rem;
-                        max-height: 2.5rem;
-                        
-                        .button {
-                            position: relative;
-                            margin: 1rem 0px 1rem 0px;
-                            display: inline-block;
-                            border-radius: inherit;
-                            height: 100%;
-                            width: 50%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            cursor: pointer;
-
-                            &:hover {
-                                background-color: rgba(255, 255, 255, 0.2);
-                            }
-
-                            &:hover .button__popover {
-                                opacity: 1;
-                            }
-
-                            .button__popover {
-                                position: absolute;
-                                height: 1rem;
-                                min-width: 2rem;
-                                opacity: 0;
-                                font-size: 0.6rem;
-                                white-space: nowrap;
-                                bottom: -3rem;
-                                background-color: inherit;
-                                padding: 10px;
-                                border-radius: 10px;
-                                transition: 0.3s opacity;
-                            }
-                        }
-
-                        .button--full {
-                            width: 100%;
-
-                            p {
-                                padding: 0.6rem;
-                            }
-                        }
-                    }
                 }
             }
 
-            .left__description {
+            &__description{
                 background-color: rgba(255, 255, 255, 0.1);
                 padding: 1rem;
                 border-radius: 0.6rem;
@@ -546,6 +494,123 @@ a {
                     cursor: pointer;
                 }
             }
+
+            &__comment-actions{
+                *{
+                    margin: 0.5rem;
+                }
+
+                .info{
+                    &__filter{
+                        position: relative;
+                        display: inline;
+
+                        &:hover p{
+                            opacity: 1;
+                        }
+                        
+                        button {
+                            background-color: $DBackground;
+                            color: $buttonTextColor;
+                            border: none;
+                        }
+
+                        p {
+                            position: absolute;
+                            opacity: 0;
+                            font-size: 0.8rem;
+                            white-space: nowrap;
+                            background-color: $DMenuBackground;
+                            border-radius: 10px;
+                            transition: 0.3s opacity;
+                            padding:10px;
+                            right: 5%;
+                        }
+                    }
+                    
+                }
+
+                .add_comment{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 2.5rem;
+                        height: 2.5rem;    
+                        border-radius: 50%;
+                    }
+                    input{
+                        width: 100%;
+                        height: 1.5rem;
+                        align-self: flex-start;
+                        background-color: $DBackground;
+                        border: none;
+                        border-bottom: 1px solid $DMenuBackground;
+                        
+                        .input:focus{
+                            outline: 0px;
+                        }
+                    }
+                }
+            }
+
+            &__comments{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                font-size: 0.85rem;
+
+                .comment{
+                    display: flex;
+                    gap: 0.5rem;
+
+                &__image{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    border-radius: 50%;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: inherit;
+                    }
+                }
+                &__description{
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.7rem;
+                    .info{
+                        display: flex;
+                        gap: inherit;
+                        p{
+                            font-size: 0.7rem;
+                        }
+                    }
+                    .content{}
+
+                    .actions{
+                        display: flex;
+                        gap: inherit;
+
+                        .button{
+                            background-color: $DBackground;
+                            padding: 0.5rem;
+                            border-radius: 50%;
+
+                            &:hover{
+                                background-color: $DMenuBackground;
+                                cursor: pointer;
+                            }
+
+                            &.half-bordered{
+                                border-radius: calc(50% / 3);
+                            }
+                        }
+                    }
+                }
+            }
+            }
         }
 
 
@@ -554,17 +619,18 @@ a {
             display: flex;
             flex-direction: column;
             gap: 0.7rem;
+            font-size: 14px;
             
-            .right__box {
+            &__box {
                 display: flex;
                 gap: 1rem;
-                font-size: 0.95rem;
 
                 .image {
                     img {
                         border-radius: 10px;
                         height: 100%;
                         max-width: 10rem;
+                        max-height: 7rem;
                         object-fit: cover;
                     }
                 }
@@ -655,7 +721,7 @@ a {
     position: relative;
     top: -5px;
     a{
-        color: white;
+        color: $buttonTextColor;
         display: block;
         padding: 1rem;
     }
@@ -667,6 +733,60 @@ a {
         object-fit: contain;
         position: relative;
         top: 0;
+    }
+}
+
+.actions__button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    width: 7rem;
+    max-height: 2.5rem;
+    
+    .button {
+        position: relative;
+        margin: 1rem 0px 1rem 0px;
+        display: inline-block;
+        border-radius: inherit;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &:hover .button__popover {
+            opacity: 1;
+        }
+
+        .button__popover {
+            position: absolute;
+            height: 1rem;
+            min-width: 2rem;
+            opacity: 0;
+            font-size: 0.6rem;
+            white-space: nowrap;
+            bottom: -3rem;
+            background-color: inherit;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s opacity;
+        }
+    }
+
+    .button--full {
+        width: 100%;
+        height: 100%;
+
+        p {
+            padding: 0.6rem;
+        }
     }
 }
 

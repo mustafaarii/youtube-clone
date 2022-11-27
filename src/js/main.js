@@ -6,6 +6,7 @@ const bodyContainer = document.getElementsByClassName("body-container")[0];
 const categoriesButtons = document.querySelector(".body-container .categories-buttons");
 const loginButton = document.querySelector(".login_button");
 const blackWindow = document.querySelector(".black-window");
+const watchPageReadMoreButton = document.querySelector(".watch-container__content .left .left__description .read-more");
 
 //variables
 let oldScrollY = window.scrollY;
@@ -25,8 +26,14 @@ function toggleHamburgerButton(page) {
     let className = "closed";
     if(page == "watch"){
         className = "opened";
-        blackWindow.classList.contains(className) ? blackWindow.classList.remove(className) : blackWindow.classList.add(className);
-        document.body.style.overflow = "hidden"
+        if(blackWindow.classList.contains(className)) {
+            blackWindow.classList.remove(className)
+            document.body.style.overflow = "auto"
+        }else {
+            blackWindow.classList.add(className)
+            document.body.style.overflow = "hidden";
+        }
+        
     }
         sidebar.classList.contains(className) ? sidebar.classList.remove(className) : sidebar.classList.add(className);
 }
@@ -35,6 +42,21 @@ function closeElement(element) {
     element.style.display = 'none';
 }
 
+function toggleReadMoreLeftDescription(){
+    const collapsibleDiv = document.querySelector(".watch-container__content .left .left__description .collapsable");
+    const classes = collapsibleDiv.classList;
+    if(classes.contains("hidden")){
+        collapsibleDiv.classList.remove("hidden");
+        collapsibleDiv.classList.add("visible");
+    }else {
+        collapsibleDiv.classList.remove("visible");
+        collapsibleDiv.classList.add("hidden");
+    }
+}
+
+function onselectDataList(e) {
+    console.log(e);
+}
 
 window.onload = function onloadFunc(e) {
     bodyContainer.addEventListener("click", ()=>closeElement(navmenu))
@@ -43,6 +65,8 @@ window.onload = function onloadFunc(e) {
         sidebar.classList.remove("opened");
         document.body.style.overflow = "auto"
     })
+
+    watchPageReadMoreButton.addEventListener("click", toggleReadMoreLeftDescription)
 };
 
 // mobile actions
