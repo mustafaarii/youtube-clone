@@ -386,12 +386,21 @@ a {
   display: flex;
   gap: 3rem;
   margin: 1rem 3rem 1rem 3rem;
+  position: relative;
 }
 .watch-container .watch-container__content .left {
   width: 73%;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+@media screen and (max-width: 1000px) {
+  .watch-container .watch-container__content .left__player {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 50%;
+  }
 }
 .watch-container .watch-container__content .left__tags {
   color: #3ea6ff;
@@ -410,10 +419,20 @@ a {
 .watch-container .watch-container__content .left__actions {
   display: flex;
 }
+@media screen and (max-width: 600px) {
+  .watch-container .watch-container__content .left__actions {
+    flex-direction: column;
+  }
+}
 .watch-container .watch-container__content .left__actions .channel {
   display: flex;
   width: 50%;
   gap: 1rem;
+}
+@media screen and (max-width: 600px) {
+  .watch-container .watch-container__content .left__actions .channel {
+    width: 100%;
+  }
 }
 .watch-container .watch-container__content .left__actions .channel .channel__img img {
   border-radius: 50%;
@@ -440,6 +459,11 @@ a {
   width: 50%;
   justify-content: flex-end;
   gap: 0.7rem;
+}
+@media screen and (max-width: 600px) {
+  .watch-container .watch-container__content .left__actions .actions {
+    width: 100%;
+  }
 }
 .watch-container .watch-container__content .left__description {
   background-color: rgba(255, 255, 255, 0.1);
@@ -727,20 +751,29 @@ a {
   }
   .body-container .sidebar {
     display: none;
-    height: 100vh;
+    height: 100vh- 8vh;
     position: sticky;
     background-color: #0f0f0f;
+    z-index: 100;
   }
   .body-container .categories-buttons {
     overflow-x: scroll;
     overflow-y: hidden;
     height: auto;
+    justify-content: flex-start;
   }
   .body-container .categories-buttons ::-webkit-scrollbar-thumb {
     display: none;
   }
-  .body-container .site-content {
-    z-index: -1;
+  .watch-container .watch-container__content {
+    flex-direction: column;
+    margin: 0.3rem;
+  }
+  .watch-container .watch-container__content .left {
+    width: 100%;
+  }
+  .watch-container .watch-container__content .right {
+    width: 100%;
   }
 }
 
