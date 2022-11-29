@@ -399,7 +399,11 @@ a {
     position: sticky;
     top: 0;
     z-index: 10;
-    height: 50%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .watch-container .watch-container__content .left__player iframe {
+    height: 30rem;
   }
 }
 .watch-container .watch-container__content .left__tags {
@@ -732,7 +736,7 @@ a {
   padding: 0.6rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
   /* Common tags */
   .sm-none {
     display: none !important;

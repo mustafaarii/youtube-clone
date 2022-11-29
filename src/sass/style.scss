@@ -411,7 +411,12 @@ a {
                     position: sticky;
                     top: 0;
                     z-index: 10;
-                    height: 50%;
+                }
+
+                iframe{
+                    @media screen and (max-width:1000px){
+                        height:30rem;
+                    }
                 }
             }
 
@@ -807,7 +812,7 @@ a {
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1100px) {
     /* Common tags */
   
   .sm-none {
