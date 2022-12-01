@@ -149,7 +149,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 0.8rem 0 0.8rem 0;
-  background-color: var(--DMenuBackground);
+  background-color: #282828;
   font-size: 0.9rem;
   display: none;
 }
