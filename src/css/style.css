@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -52,12 +53,25 @@ table {
   border-spacing: 0;
 }
 
+html {
+  --DBackground: #0f0f0f;
+  --buttonTextColor: #bbb;
+  --DMenuBackground: #282828;
+  --buttonBGColor: hsl(0deg, 0%, 18.82%);
+}
+
+html[theme=light] {
+  --DBackground: white;
+  --buttonTextColor: #0f0f0f;
+  --buttonBGColor: #bbb;
+}
+
 body {
-  background-color: #0f0f0f;
   font-size: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
-  color: #bbb;
+  background-color: var(--DBackground);
+  color: var(--buttonTextColor);
 }
 
 button:hover {
@@ -79,7 +93,7 @@ button:hover {
 
 a {
   text-decoration: none;
-  color: #bbb;
+  color: var(--buttonTextColor);
 }
 
 .navbar {
@@ -87,8 +101,8 @@ a {
   display: grid;
   position: sticky;
   top: 0;
-  z-index: 10;
-  background-color: #0f0f0f;
+  z-index: 20;
+  background-color: var(--DBackground);
   grid-template-columns: 2fr 6fr 2fr;
   height: 8vh;
   transition: 0.3s;
@@ -111,8 +125,8 @@ a {
 .navbar .center .search-bar input {
   padding: 0.5rem;
   border-radius: 40px 0 0 40px;
-  background-color: #0f0f0f;
-  border: 1.7px solid hsl(0deg, 0%, 18.82%);
+  background-color: var(--DBackground);
+  border: 1.7px solid var(--buttonBGColor);
   text-indent: 2px;
   padding-left: 1rem;
   width: 520px;
@@ -125,8 +139,6 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-.navbar .end .menu {
   position: relative;
 }
 .navbar .end .menu .nav_menu {
@@ -137,7 +149,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 0.8rem 0 0.8rem 0;
-  background-color: #282828;
+  background-color: var(--DMenuBackground);
   font-size: 0.9rem;
   display: none;
 }
@@ -160,7 +172,7 @@ a {
   font-size: 1.2rem;
 }
 .navbar .end .menu .nav_menu a:hover {
-  background-color: hsl(0deg, 0%, 18.82%);
+  background-color: var(--buttonBGColor);
 }
 .navbar .end .menu .nav_menu .detail_menu::after {
   text-rendering: auto;
@@ -176,9 +188,15 @@ a {
 }
 .navbar .end .menu .icon_button {
   margin-right: 0.7rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .navbar .end button {
-  padding: 0.8rem;
+  margin: 0.8rem;
   border: none;
 }
 .navbar .end:last-child {
@@ -225,11 +243,12 @@ a {
   height: 92vh;
 }
 .body-container .sidebar::-webkit-scrollbar {
-  background-color: #0f0f0f;
-  width: 0.6rem;
+  background-color: var(--DBackground);
+  width: 0.4rem;
+  opacity: 0.3;
 }
 .body-container .sidebar::-webkit-scrollbar-thumb {
-  background: #bbb;
+  background: var(--buttonTextColor);
   border-radius: 1rem;
   display: none;
 }
@@ -258,15 +277,15 @@ a {
   color: red;
 }
 .body-container .sidebar .section .active {
-  background: #282828;
+  background: var(--DMenuBackground);
 }
 .body-container .sidebar .button {
   width: 90%;
   padding: 0.8rem 1rem 0.8rem 1rem;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
 }
 .body-container .sidebar .button:hover {
-  background-color: #282828;
+  background-color: var(--buttonBGColor);
 }
 .body-container .categories-buttons {
   display: flex;
@@ -276,18 +295,17 @@ a {
   padding: 0.5rem;
   position: sticky;
   top: 8vh;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
   z-index: 10;
   transition: 0.3s;
 }
 .body-container .categories-buttons :first-child {
-  background-color: #bbb;
-  color: #0f0f0f;
+  background-color: var(--buttonTextColor);
+  color: var(--DBackground);
 }
 .body-container .categories-buttons .button {
   margin: 12px 6px 12px 6px;
   padding: 10px;
-  font-weight: bold;
   white-space: nowrap;
   transition: 300ms ease background;
 }
@@ -304,7 +322,7 @@ a {
   display: flex;
   flex-direction: column;
   width: 90%;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid var(--buttonTextColor);
 }
 .body-container .site-content .content .tab {
   display: grid;
@@ -331,8 +349,8 @@ a {
   position: absolute;
   bottom: 0;
   right: 0.4rem;
-  color: buttonTextColor;
-  background-color: #282828;
+  color: var(--buttonTextColor);
+  background-color: var(--DMenuBackground);
   border-radius: 5px;
   padding: 0.3rem;
   margin-bottom: 0.3rem;
@@ -373,7 +391,7 @@ a {
   left: -50%;
   z-index: 100;
   height: 100vh;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
   transition: 0.4s left;
 }
 .watch-container .sidebar .start {
@@ -500,8 +518,8 @@ a {
   opacity: 1;
 }
 .watch-container .watch-container__content .left__comment-actions .info__filter button {
-  background-color: #0f0f0f;
-  color: #bbb;
+  background-color: var(--DBackground);
+  color: var(--buttonTextColor);
   border: none;
 }
 .watch-container .watch-container__content .left__comment-actions .info__filter p {
@@ -509,7 +527,7 @@ a {
   opacity: 0;
   font-size: 0.8rem;
   white-space: nowrap;
-  background-color: #282828;
+  background-color: var(--DMenuBackground);
   border-radius: 10px;
   transition: 0.3s opacity;
   padding: 10px;
@@ -528,9 +546,9 @@ a {
   width: 100%;
   height: 1.5rem;
   align-self: flex-start;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
   border: none;
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid var(--DMenuBackground);
 }
 .watch-container .watch-container__content .left__comment-actions .add_comment input .input:focus {
   outline: 0px;
@@ -574,12 +592,12 @@ a {
   gap: inherit;
 }
 .watch-container .watch-container__content .left__comments .comment__description .actions .button {
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
   padding: 0.5rem;
   border-radius: 50%;
 }
 .watch-container .watch-container__content .left__comments .comment__description .actions .button:hover {
-  background-color: #282828;
+  background-color: var(--DMenuBackground);
   cursor: pointer;
 }
 .watch-container .watch-container__content .left__comments .comment__description .actions .button.half-bordered {
@@ -617,19 +635,19 @@ a {
 }
 
 .button {
-  background-color: hsl(0deg, 0%, 18.82%);
-  color: #bbb;
+  background-color: var(--buttonBGColor);
+  color: var(--buttonTextColor);
   border-radius: 10px;
   border: none;
 }
 
 .search_button {
-  border: 1px solid hsl(0deg, 0%, 18.82%);
-  background-color: hsl(0deg, 0%, 18.82%);
-  color: #bbb;
+  border: 1px solid var(--buttonBGColor);
+  background-color: var(--buttonBGColor);
+  color: var(--buttonTextColor);
 }
 .search_button * {
-  color: #bbb;
+  color: var(--buttonTextColor);
   font-size: 1rem;
 }
 
@@ -637,14 +655,14 @@ a {
   border-radius: 100%;
   padding: 0.7rem 1rem;
   margin-left: 0.4rem;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
 }
 .icon_button i {
   width: 100%;
   height: 100%;
 }
 .icon_button:focus {
-  background-color: #282828;
+  background-color: var(--DMenuBackground);
 }
 
 .menu_button {
@@ -657,7 +675,7 @@ a {
 .login_button {
   border-radius: 2rem;
   color: #3ea6ff;
-  background-color: #0f0f0f;
+  background-color: var(--DBackground);
   font-weight: bold;
   border: 1px solid rgb(88, 87, 87);
 }
@@ -676,7 +694,7 @@ a {
   position: relative;
 }
 .hamburger-btn a {
-  color: #bbb;
+  color: var(--buttonTextColor);
   display: block;
   padding: 1rem;
 }
@@ -710,7 +728,7 @@ a {
   cursor: pointer;
 }
 .actions__button-group .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #bbb;
 }
 .actions__button-group .button:hover .button__popover {
   opacity: 1;
@@ -723,7 +741,8 @@ a {
   font-size: 0.6rem;
   white-space: nowrap;
   bottom: -3rem;
-  background-color: inherit;
+  background-color: #282828;
+  color: #bbb;
   padding: 10px;
   border-radius: 10px;
   transition: 0.3s opacity;
@@ -757,7 +776,7 @@ a {
     display: none;
     height: 100vh- 8vh;
     position: sticky;
-    background-color: #0f0f0f;
+    background-color: var(--DBackground);
     z-index: 100;
   }
   .body-container .categories-buttons {

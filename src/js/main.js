@@ -7,19 +7,18 @@ const categoriesButtons = document.querySelector(".body-container .categories-bu
 const loginButton = document.querySelector(".login_button");
 const blackWindow = document.querySelector(".black-window");
 const watchPageReadMoreButton = document.querySelector(".watch-container__content .left .left__description .read-more");
-
+const collapsibleDiv = document.querySelector(".watch-container__content .left .left__description .collapsable");
+const switchTheme = document.querySelector(".navbar .start .mode-switch");
 //variables
 let oldScrollY = window.scrollY;
 
 //events
 function toggleNavbarButton() {
     let display = navmenu.style.display;
-
-    if (display === 'none')
+    if (display == 'none')
         navmenu.style.display = 'block';
     else
         navmenu.style.display = 'none';
-
 }
 
 function toggleHamburgerButton(page) {
@@ -43,7 +42,6 @@ function closeElement(element) {
 }
 
 function toggleReadMoreLeftDescription(){
-    const collapsibleDiv = document.querySelector(".watch-container__content .left .left__description .collapsable");
     const classes = collapsibleDiv.classList;
     if(classes.contains("hidden")){
         collapsibleDiv.classList.remove("hidden");
@@ -60,13 +58,22 @@ function onselectDataList(e) {
 
 window.onload = function onloadFunc(e) {
     bodyContainer.addEventListener("click", ()=>closeElement(navmenu))
+    switchTheme.addEventListener("click", () => {
+        const theme = document.documentElement.getAttribute("theme");
+        console.log(theme);
+        if(theme === "light")
+            document.documentElement.removeAttribute('theme');
+        else
+            document.documentElement.setAttribute("theme","light");    
+    })
+
     blackWindow.addEventListener("click", ()=>{
         blackWindow.classList.remove("opened");
         sidebar.classList.remove("opened");
         document.body.style.overflow = "auto"
     })
 
-    watchPageReadMoreButton.addEventListener("click", toggleReadMoreLeftDescription)
+    watchPageReadMoreButton.addEventListener("click", toggleReadMoreLeftDescription);
 };
 
 // mobile actions

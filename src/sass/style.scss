@@ -2,12 +2,25 @@
 @import 'variables';
 @import 'mixin.scss';
 
+html {
+    --DBackground: #{$DBackground};
+    --buttonTextColor: #{$buttonTextColor};
+    --DMenuBackground: #{$DMenuBackground};
+    --buttonBGColor: #{$buttonBGColor};
+}
+
+html[theme='light']{
+    --DBackground: #{white};
+    --buttonTextColor: #{$DBackground};
+    --buttonBGColor: #{$buttonTextColor};
+}
+
 body{
-    background-color: $DBackground;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box;
-    color: $buttonTextColor;
+    background-color: var(--DBackground);
+    color: var(--buttonTextColor);
 }
 
 button{
@@ -32,7 +45,7 @@ button{
 
 a {
     text-decoration: none;
-    color: $buttonTextColor;
+    color: var(--buttonTextColor);
 }
 
 //common section
@@ -41,8 +54,8 @@ a {
     display: grid;
     position: sticky;
     top: 0;
-    z-index: 10;
-    background-color: $DBackground;
+    z-index: 20;
+    background-color: var(--DBackground);
     grid-template-columns: 2fr 6fr 2fr;
     height: $navHeight;
     transition: 0.3s;
@@ -66,8 +79,8 @@ a {
             input{
                 padding: 0.5rem;
                 border-radius: 40px 0 0 40px;
-                background-color: $DBackground;
-                border:1.7px solid $buttonBGColor;
+                background-color: var(--DBackground);
+                border:1.7px solid var(--buttonBGColor);
                 text-indent: 2px;
                 padding-left: 1rem;
                 width: 520px;
@@ -84,10 +97,9 @@ a {
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        position: relative;
         
         .menu{
-            position: relative;
-            
             .nav_menu{
                 position: absolute;
                 right: 0;
@@ -96,7 +108,7 @@ a {
                 display: flex;
                 flex-direction: column;
                 padding: 0.8rem 0 0.8rem 0;
-                background-color: $DMenuBackground;
+                background-color: var(--DMenuBackground);
                 font-size: 0.9rem;
                 display: none;
 
@@ -121,7 +133,7 @@ a {
                     }
                 }
                 a:hover{
-                    background-color: $buttonBGColor;
+                    background-color: var(--buttonBGColor);
                 }
 
                 .detail_menu::after{
@@ -141,11 +153,17 @@ a {
 
             .icon_button{
                 margin-right: 0.7rem;
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
         button{
-            padding: 0.8rem;
+            margin: 0.8rem;
             border:none;
         }
 
@@ -202,12 +220,13 @@ a {
 
 
         &::-webkit-scrollbar{
-            background-color: $DBackground;
-            width: 0.6rem;
+            background-color: var(--DBackground);
+            width: 0.4rem;
+            opacity: 0.3;
         }
 
         &::-webkit-scrollbar-thumb{
-            background: $buttonTextColor;
+            background: var(--buttonTextColor);
             border-radius: 1rem;
             display: none;
         }
@@ -246,16 +265,16 @@ a {
             }
 
             .active{
-                background: $DMenuBackground;
+                background: var(--DMenuBackground);
             }
         }
         .button{
             width: 90%;
             padding: 0.8rem 1rem 0.8rem 1rem;
-            background-color: $DBackground;
+            background-color: var(--DBackground);
 
             &:hover{
-                background-color: $DMenuBackground;
+                background-color: var(--buttonBGColor);
             }
         }
     }      
@@ -268,20 +287,19 @@ a {
         padding: 0.5rem;
         position: sticky;
         top: $navHeight;
-        background-color: $DBackground;
+        background-color: var(--DBackground);
         z-index: 10;
         transition: 0.3s;
         
 
         :first-child{
-            background-color: #bbb;
-            color: $DBackground
+            background-color: var(--buttonTextColor);
+            color: var(--DBackground);
         }
 
         .button{
             margin: 12px 6px 12px 6px;
             padding: 10px;
-            font-weight: bold;
             white-space: nowrap;
             transition: 300ms ease background;
 
@@ -300,7 +318,7 @@ a {
             display: flex;
             flex-direction: column;
             width: 90%;            
-            border-bottom: 3px solid grey;
+            border-bottom: 3px solid var(--buttonTextColor);
             
             .tab{
                 display: grid;
@@ -327,8 +345,8 @@ a {
                             position: absolute;
                             bottom: 0;
                             right: 0.4rem;
-                            color: buttonTextColor;
-                            background-color: $DMenuBackground;
+                            color: var(--buttonTextColor);
+                            background-color: var(--DMenuBackground);
                             border-radius: 5px;
                             padding: 0.3rem;
                             margin-bottom: 0.3rem;
@@ -382,7 +400,7 @@ a {
         left: -50%;
         z-index: 100;
         height: 100vh;
-        background-color: $DBackground;
+        background-color: var(--DBackground);
         transition: 0.4s left;
 
         .start {
@@ -533,8 +551,8 @@ a {
                         }
                         
                         button {
-                            background-color: $DBackground;
-                            color: $buttonTextColor;
+                            background-color: var(--DBackground);
+                            color: var(--buttonTextColor);
                             border: none;
                         }
 
@@ -543,7 +561,7 @@ a {
                             opacity: 0;
                             font-size: 0.8rem;
                             white-space: nowrap;
-                            background-color: $DMenuBackground;
+                            background-color: var(--DMenuBackground);
                             border-radius: 10px;
                             transition: 0.3s opacity;
                             padding:10px;
@@ -565,9 +583,9 @@ a {
                         width: 100%;
                         height: 1.5rem;
                         align-self: flex-start;
-                        background-color: $DBackground;
+                        background-color: var(--DBackground);
                         border: none;
-                        border-bottom: 1px solid $DMenuBackground;
+                        border-bottom: 1px solid var(--DMenuBackground);
                         
                         .input:focus{
                             outline: 0px;
@@ -617,12 +635,12 @@ a {
                         gap: inherit;
 
                         .button{
-                            background-color: $DBackground;
+                            background-color: var(--DBackground);
                             padding: 0.5rem;
                             border-radius: 50%;
 
                             &:hover{
-                                background-color: $DMenuBackground;
+                                background-color: var(--DMenuBackground);
                                 cursor: pointer;
                             }
 
@@ -679,19 +697,19 @@ a {
 //BUTTONS
 
 .button{
-    background-color: $buttonBGColor;
-    color: $buttonTextColor;
+    background-color: var(--buttonBGColor);
+    color: var(--buttonTextColor);
     border-radius: 10px;
     border:none;
 }
 
 .search_button{
-    border: 1px solid $buttonBGColor;
-    background-color: $buttonBGColor;
-    color: $buttonTextColor;
+    border: 1px solid var(--buttonBGColor);
+    background-color: var(--buttonBGColor);
+    color: var(--buttonTextColor);
 
     *{
-        color: $buttonTextColor;
+        color: var(--buttonTextColor);
         font-size: 1rem;
     }
 }
@@ -700,7 +718,7 @@ a {
     border-radius: 100%;
     padding: 0.7rem 1rem;
     margin-left: 0.4rem;
-    background-color: $DBackground;
+    background-color: var(--DBackground);
 
     i{
         width: 100%;
@@ -708,7 +726,7 @@ a {
     }
 
     &:focus{
-        background-color: $DMenuBackground;
+        background-color: var(--DMenuBackground);
     }
 }
 
@@ -722,7 +740,7 @@ a {
 .login_button{
     border-radius:2rem;
     color: $lightBlue;
-    background-color: $DBackground;
+    background-color: var(--DBackground);
     font-weight: bold;
     border: 1px solid rgb(88, 87, 87);
 
@@ -743,7 +761,7 @@ a {
     padding: 0.3rem;
     position: relative;
     a{
-        color: $buttonTextColor;
+        color: var(--buttonTextColor);
         display: block;
         padding: 1rem;
     }
@@ -780,7 +798,7 @@ a {
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: $buttonTextColor;
         }
 
         &:hover .button__popover {
@@ -795,7 +813,8 @@ a {
             font-size: 0.6rem;
             white-space: nowrap;
             bottom: -3rem;
-            background-color: inherit;
+            background-color: $DMenuBackground;
+            color: $buttonTextColor;
             padding: 10px;
             border-radius: 10px;
             transition: 0.3s opacity;
@@ -839,7 +858,7 @@ a {
         display: none;
         height: 100vh-$navHeight;
         position: sticky;
-        background-color: $DBackground;
+        background-color: var(--DBackground);
         z-index: 100;
     }
 
