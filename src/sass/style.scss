@@ -6,13 +6,15 @@ html {
     --DBackground: #{$DBackground};
     --buttonTextColor: #{$buttonTextColor};
     --DMenuBackground: #{$DMenuBackground};
+    --DNavMenuBackground: #{$DNavMenuBackground};
     --buttonBGColor: #{$buttonBGColor};
 }
 
 html[theme='light']{
     --DBackground: #{white};
+    --DNavMenuBackground: #{white};
     --buttonTextColor: #{$DBackground};
-    --buttonBGColor: #{$buttonTextColor};
+    --buttonBGColor: #{rgba(0, 0, 0, 0.05)};
 }
 
 body{
@@ -35,7 +37,7 @@ button{
     height: 100vh;
     background-color: black;
     opacity: 0.5;
-    z-index: 20;
+    z-index: 30;
     display: none;
 
     &.opened {
@@ -108,9 +110,10 @@ a {
                 display: flex;
                 flex-direction: column;
                 padding: 0.8rem 0 0.8rem 0;
-                background-color: $DMenuBackground;
+                background-color: var(--DNavMenuBackground);
                 font-size: 0.9rem;
                 display: none;
+                box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 
                 *{
                     font-size: 14px;
@@ -194,17 +197,28 @@ a {
                 flex-direction: column;
                 gap: 0.4rem!important;
                 font-size: 0.7rem;
-
             }
         }
 
         .section:nth-child(1){
             display: block!important;
             border-bottom: none;
+
+            *{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
         .section:nth-child(2){
             display: block!important;
             border-bottom: none;
+
+            *{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
 
     }
@@ -345,8 +359,8 @@ a {
                             position: absolute;
                             bottom: 0;
                             right: 0.4rem;
-                            color: var(--buttonTextColor);
-                            background-color: var(--DMenuBackground);
+                            color: $buttonTextColor;
+                            background-color: $DMenuBackground;
                             border-radius: 5px;
                             padding: 0.3rem;
                             margin-bottom: 0.3rem;
@@ -585,7 +599,7 @@ a {
                         align-self: flex-start;
                         background-color: var(--DBackground);
                         border: none;
-                        border-bottom: 1px solid var(--DMenuBackground);
+                        border-bottom: 1px solid $DMenuBackground;
                         
                         .input:focus{
                             outline: 0px;

@@ -9,6 +9,7 @@ const blackWindow = document.querySelector(".black-window");
 const watchPageReadMoreButton = document.querySelector(".watch-container__content .left .left__description .read-more");
 const collapsibleDiv = document.querySelector(".watch-container__content .left .left__description .collapsable");
 const switchTheme = document.querySelector(".navbar .start .mode-switch");
+const logoIconDiv = document.querySelector(".logo-icon");
 //variables
 let oldScrollY = window.scrollY;
 
@@ -52,25 +53,26 @@ function toggleReadMoreLeftDescription(){
     }
 }
 
-function onselectDataList(e) {
-    console.log(e);
-}
-
 window.onload = function onloadFunc(e) {
     bodyContainer.addEventListener("click", ()=>closeElement(navmenu))
-    switchTheme.addEventListener("click", () => {
-        const theme = document.documentElement.getAttribute("theme");
-        console.log(theme);
-        if(theme === "light")
-            document.documentElement.removeAttribute('theme');
-        else
-            document.documentElement.setAttribute("theme","light");    
-    })
 
     blackWindow.addEventListener("click", ()=>{
         blackWindow.classList.remove("opened");
         sidebar.classList.remove("opened");
         document.body.style.overflow = "auto"
+    })
+
+    switchTheme.addEventListener("click", () => {
+        const theme = document.documentElement.getAttribute("theme");
+        if(theme === "light"){
+            document.documentElement.removeAttribute('theme');
+            logoIconDiv.children[0].setAttribute("src", './src/images/homepage-covers/logo-dark.png')
+        }
+        else{
+            document.documentElement.setAttribute("theme","light");    
+            logoIconDiv.children[0].setAttribute("src", './src/images/homepage-covers/logo-light.png')
+        }
+            
     })
 
     watchPageReadMoreButton.addEventListener("click", toggleReadMoreLeftDescription);
