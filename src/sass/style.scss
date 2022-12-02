@@ -1,6 +1,7 @@
 @import 'reset';
 @import 'variables';
 @import 'mixin.scss';
+@import 'switch.scss';
 
 html {
     --DBackground: #{$DBackground};
@@ -66,6 +67,7 @@ a {
     .start{
         display: flex;
         justify-content: flex-start;
+        position: relative;
     }
 
     .center{
