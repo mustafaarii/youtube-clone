@@ -807,7 +807,7 @@ a {
   cursor: pointer;
 }
 .actions__button-group .button:hover {
-  background-color: #bbb;
+  background-color: var(--DMenuBackground);
 }
 .actions__button-group .button:hover .button__popover {
   opacity: 1;
